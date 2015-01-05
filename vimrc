@@ -1,3 +1,4 @@
-" Make space more useful
-nnoremap <space> za
+execute pathogen#infect()
+
 set nu
+syntax on
