@@ -22,3 +22,6 @@
 [submodule "bundle/easymotion"]
 	path = bundle/easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
+[submodule "bundle/YCM"]
+	path = bundle/YCM
+	url = https://github.com/Valloric/YouCompleteMe.git
