@@ -2,13 +2,38 @@ execute pathogen#infect()
 
 set ts=4
 set nu
+set history=700
+set encoding=utf8
+set ruler
+"set background=dark
+
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" Use spaces instead of tabs
+set expandtab
+set smarttab
+" 1 tab == 4 spaces
+set shiftwidth=4
+set tabstop=4
+
 syntax on
 
 let mapleader = ","
+let g:mapleader = ","
 
 nmap <leader>l :set list!<CR>
 nmap <leader>h :Helptags<CR>
 
+" Smart way to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
 
 set list
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
@@ -37,6 +62,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 "CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+"Fugitive
 
 filetype on
 "filet
