@@ -54,7 +54,7 @@ let g:airline_theme='powerlineish'
 "在vim启动时默认开启NERDTree
 autocmd VimEnter * NERDTree
 "let NERDTreeWinPos="right"
-let NERDTreeIgnore = ['\.swp$', '.git$[[dir]]', '.o$[[file]]']
+let NERDTreeIgnore = ['\.swp$', '.git$[[dir]]', '.o$[[file]]', '.sublime-project[[file]]', '.sublime-workspace[[file]]']
 map <C-n> :NERDTreeToggle<CR>
 nmap <leader>e :NERDTreeFind<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
