@@ -33,7 +33,7 @@ map <C-l> <C-W>l
 
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
-cmap w!! w !sudo tee > /dev/null %
+"cmap w!! w !sudo tee > /dev/null %
 
 set list
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
@@ -52,12 +52,12 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='powerlineish'
 
 "在vim启动时默认开启NERDTree
-autocmd VimEnter * NERDTree
+"autocmd VimEnter * NERDTree
 "let NERDTreeWinPos="right"
 let NERDTreeIgnore = ['\.swp$', '.git$[[dir]]', '\.o$[[file]]', '.sublime-project[[file]]', '.sublime-workspace[[file]]']
 map <C-n> :NERDTreeToggle<CR>
 nmap <leader>e :NERDTreeFind<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 "CtrlP
 let g:ctrlp_map = '<c-p>'
@@ -70,7 +70,8 @@ filetype on
 autocmd FileType c,cpp set cindent
 "au
 
-augroup reload_vimrc " {
-    autocmd!
-    autocmd BufWritePost $MYVIMRC source $MYVIMRC
-augroup END " }
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
+"augroup reload_vimrc " {
+"    autocmd!
+"    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+"augroup END " }
