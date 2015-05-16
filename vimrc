@@ -96,10 +96,11 @@ let g:tagbar_type_go = {
 
 "Fugitive
 
-filetype on
+filetype plugin on
+filetype plugin indent on
 "filet
 autocmd FileType c,cpp set cindent
-autocmd FileType php noremap <C-B> :w!<CR>:!/usr/bin/php %<CR>
+"autocmd FileType php noremap <C-B> :w!<CR>:!/usr/bin/php %<CR>
 "au
 
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
