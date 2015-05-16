@@ -68,6 +68,7 @@ let g:ctrlp_cmd = 'CtrlP'
 filetype on
 "filet
 autocmd FileType c,cpp set cindent
+autocmd FileType php noremap <C-B> :w!<CR>:!/usr/bin/php %<CR>
 "au
 
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
