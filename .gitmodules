@@ -25,3 +25,6 @@
 [submodule "bundle/YCM"]
 	path = bundle/YCM
 	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = git://github.com/majutsushi/tagbar
