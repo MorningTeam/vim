@@ -1,1 +1,6 @@
 go get -u github.com/jstemmer/gotags
+go get -u github.com/rogpeppe/godef
+
+
+gd      go to definition
+Ctrl_o  go back
