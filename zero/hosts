@@ -44,7 +44,7 @@
 
 # Section Start: Localhost
 127.0.0.1        localhost.localdomain localhost
-127.0.0.1        fishingman
+127.0.0.1        inspire
 # Section End: Localhost
 
 # Section Start: huhamhire-hosts
@@ -54,6 +54,8 @@
 # Section End: huhamhire-hosts
 
 # Section Start: google
+64.233.162.83    go.googlesource.com
+64.233.162.83    golang.org
 64.233.162.83    0.docs.google.com
 64.233.162.83    0.drive.google.com
 64.233.162.83    1.docs.google.com
