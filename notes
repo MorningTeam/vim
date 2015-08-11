@@ -26,3 +26,12 @@ Install airline
     run ./install.sh
     Edit -> Profile Preferences -> custom font -> Source Code Pro for Powerline Medium 13(font-size)
 
+## tmux
+scroll:
+    Ctrl_b [
+
+Ctrl-b then [ then you can use your normal navigation keys to scroll around (eg. Up Arrow or PgDn). Press q to quit scroll mode.
+
+Alternatively you can press Ctrl-b PgUp to go directly into copy mode and scroll one page up (which is what it sounds like you will want most of the time)
+
+You can also scroll up/down line by line using Shift-k and Shift-j (if you're already in scroll mode)
