@@ -1,3 +1,6 @@
+git submodule init
+git submodule update --recursive
+
 go get -u github.com/jstemmer/gotags
 go get -u github.com/rogpeppe/godef
 
@@ -5,6 +8,23 @@ go get -u github.com/rogpeppe/godef
 gd      go to definition
 Ctrl_o  go back
 
+
+Install java8
+http://www.webupd8.org/2014/03/how-to-install-oracle-java-8-in-debian.html
+
+Install Genymotion
+http://www.sysads.co.uk/2014/06/install-genymotion-in-ubuntu-14-04/
+
+Install YouCompleteMe
+    sudo apt-get install build-essential cmake
+    ./install.sh --clang-completer --gocode-completer
+
+Install airline
+    `git clone https://github.com/powerline/fonts.git`  or
+    `wget https://github.com/powerline/fonts/archive/master.zip`
+
+    run ./install.sh
+    Edit -> Profile Preferences -> custom font -> Source Code Pro for Powerline Medium 13(font-size)
 
 ## tmux
 scroll:
