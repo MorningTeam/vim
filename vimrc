@@ -24,6 +24,8 @@ let g:mapleader = ","
 
 nmap <leader>l :set list!<CR>
 nmap <leader>h :Helptags<CR>
+nmap <leader>w :x<CR>
+nmap <leader>q :q!<CR>
 
 " Smart way to move between windows
 map <C-j> <C-W>j
