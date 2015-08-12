@@ -63,6 +63,8 @@ nmap <leader>e :NERDTreeFind<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+"YCM
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YCM/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 "Tagbar
 nmap <F8> :TagbarToggle<CR>
