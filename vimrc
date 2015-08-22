@@ -5,6 +5,8 @@ set nu
 set history=700
 set encoding=utf8
 set ruler
+"set t_Co=256
+"color molokai
 "set background=dark
 
 " Set to auto read when a file is changed from the outside
@@ -28,14 +30,28 @@ nmap <leader>w :x<CR>
 nmap <leader>q :q!<CR>
 
 " Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+" map <C-j> <C-W>j
+" map <C-k> <C-W>k
+" map <C-h> <C-W>h
+" map <C-l> <C-W>l
 
+"tmux
+let g:tmux_navigator_save_on_switch = 1
+
+"syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+"let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
-"cmap w!! w !sudo tee > /dev/null %
+cmap w!! w !sudo tee > /dev/null %
 
 set list
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮

@@ -9,6 +9,10 @@ go get -u github.com/rogpeppe/godef
 gd      go to definition
 Ctrl_o  go back
 
+Ctags
+    Ctrl_], Ctrl_t navigation between definition
+    Ctrl_w Ctrl_]   split a new window
+    :tjump     taglist
 
 Install java8
 http://www.webupd8.org/2014/03/how-to-install-oracle-java-8-in-debian.html
