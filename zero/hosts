@@ -44,7 +44,7 @@
 
 # Section Start: Localhost
 127.0.0.1        localhost.localdomain localhost
-127.0.0.1        inspire
+127.0.0.1        inspire sgirl.local zero.local
 # Section End: Localhost
 
 # Section Start: huhamhire-hosts
@@ -402,6 +402,7 @@
 64.233.162.83    scholar.google.cn
 64.233.162.83    translate.google.cn
 64.233.162.83    www.google.cn
+64.233.162.83    www.google.co.jp
 64.233.162.83    www.gstatic.cn
 64.233.162.83    accounts.google.com.hk
 64.233.162.83    blogsearch.google.com.hk
