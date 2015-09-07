@@ -29,6 +29,9 @@ nmap <leader>h :Helptags<CR>
 nmap <leader>w :x<CR>
 nmap <leader>q :q!<CR>
 
+noremap <Leader>sc :ccl <bar> lcl<CR>
+noremap <Leader>se :Errors<CR>
+
 " Smart way to move between windows
 " map <C-j> <C-W>j
 " map <C-k> <C-W>k
