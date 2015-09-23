@@ -68,6 +68,8 @@ set wildignore+=*.sw?                            " Vim swap files
 set wildignore+=*.luac                           " Lua byte code
 set wildignore+=*.pyc                            " Python byte code
 
+"Ag
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme='powerlineish'
