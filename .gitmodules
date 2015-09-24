@@ -64,3 +64,6 @@
 [submodule "bundle/ack"]
 	path = bundle/ack
 	url = https://github.com/mileszs/ack.vim.git
+[submodule "dotfiles/tmux/tpm"]
+	path = dotfiles/tmux/tpm
+	url = https://github.com/tmux-plugins/tpm.git
