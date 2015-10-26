@@ -67,3 +67,6 @@
 [submodule "dotfiles/tmux/tpm"]
 	path = dotfiles/tmux/tpm
 	url = https://github.com/tmux-plugins/tpm.git
+[submodule "bundle/emmet"]
+	path = bundle/emmet
+	url = https://github.com/mattn/emmet-vim

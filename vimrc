@@ -41,6 +41,11 @@ noremap <Leader>se :Errors<CR>
 "tmux
 let g:tmux_navigator_save_on_switch = 1
 
+"emmet
+let g:user_emmet_mode='a' "enable all function in all mode.
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
 "syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}

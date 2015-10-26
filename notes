@@ -55,3 +55,7 @@ prefix + alt + u
     * remove/uninstall plugins not on the plugin list
 ## Silver Search
 apt-get install silversearcher-ag
+
+## Change Font Size
+zoom in Ctrl_Shift_+
+zoom out Ctrl_-
