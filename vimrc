@@ -46,6 +46,14 @@ let g:user_emmet_mode='a' "enable all function in all mode.
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 
+"UltiSnips
+let g:UltiSnipsExpandTrigger="<c-t>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" " If you want :UltiSnipsEdit to split your window.
+" let g:UltiSnipsEditSplit="vertical"
+
 "syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
