@@ -82,3 +82,18 @@
 [submodule "bundle/vim-css3-syntax"]
 	path = bundle/vim-css3-syntax
 	url = https://github.com/hail2u/vim-css3-syntax
+[submodule "bundle/vim-blade"]
+	path = bundle/vim-blade
+	url = https://github.com/jwalton512/vim-blade.git
+[submodule "bundle/vdebug"]
+	path = bundle/vdebug
+	url = https://github.com/joonty/vdebug.git
+[submodule "bundle/vim-autotag"]
+	path = bundle/vim-autotag
+	url = https://github.com/craigemery/vim-autotag.git
+[submodule "bundle/vim-php-namespace"]
+	path = bundle/vim-php-namespace
+	url = https://github.com/arnaud-lb/vim-php-namespace.git
+[submodule "bundle/vim-css-color"]
+	path = bundle/vim-css-color
+	url = https://github.com/skammer/vim-css-color.git

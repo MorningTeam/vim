@@ -51,8 +51,14 @@ let g:UltiSnipsExpandTrigger="<c-t>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-" " If you want :UltiSnipsEdit to split your window.
+let g:snips_author="devin"
+
+" If you want :UltiSnipsEdit to split your window.
 " let g:UltiSnipsEditSplit="vertical"
+
+"PHP namespace
+inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
+noremap <Leader>u :call PhpInsertUse()<CR>
 
 "syntastic
 set statusline+=%#warningmsg#
@@ -93,7 +99,7 @@ let g:airline_theme='powerlineish'
 let NERDTreeIgnore = ['\.swp$', '.git$[[dir]]', '\.o$[[file]]', '.sublime-project[[file]]', '.sublime-workspace[[file]]']
 map <C-n> :NERDTreeToggle<CR>
 nmap <leader>e :NERDTreeFind<CR>
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 "CtrlP
 let g:ctrlp_map = '<c-p>'
