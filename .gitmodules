@@ -94,6 +94,3 @@
 [submodule "bundle/vim-php-namespace"]
 	path = bundle/vim-php-namespace
 	url = https://github.com/arnaud-lb/vim-php-namespace.git
-[submodule "bundle/vim-css-color"]
-	path = bundle/vim-css-color
-	url = https://github.com/skammer/vim-css-color.git
