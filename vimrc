@@ -19,6 +19,9 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 
+set backupdir=$HOME/.vim/backups
+set directory=$HOME/.vim/swaps
+
 syntax on
 
 let mapleader = ","
