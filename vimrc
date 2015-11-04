@@ -31,6 +31,8 @@ nmap <leader>l :set list!<CR>
 nmap <leader>h :Helptags<CR>
 nmap <leader>w :x<CR>
 nmap <leader>q :q!<CR>
+
+" Ctags
 nmap <leader>cj :tjump<CR>
 
 noremap <Leader>sc :ccl <bar> lcl<CR>
@@ -100,8 +102,8 @@ let g:airline_theme='bubblegum'
 "在vim启动时默认开启NERDTree
 "autocmd VimEnter * NERDTree
 "let NERDTreeWinPos="right"
-let NERDTreeIgnore = ['\.swp$', '.git$[[dir]]', '\.o$[[file]]', '.sublime-project[[file]]', '.sublime-workspace[[file]]']
-map <C-n> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.swp$', '.git$[[dir]]', '\.o$[[file]]', '.sublime-project[[file]]', '.sublime-workspace[[file]]', 'tags']
+map <leader>n :NERDTreeToggle<CR>
 nmap <leader>e :NERDTreeFind<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
