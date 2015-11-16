@@ -18,6 +18,7 @@ set smarttab
 " 1 tab == 4 spaces
 set shiftwidth=4
 set tabstop=4
+set softtabstop=4
 
 set backupdir=$HOME/.vim/backups
 set directory=$HOME/.vim/swaps
@@ -50,7 +51,7 @@ let g:tmux_navigator_save_on_switch = 1
 "emmet
 let g:user_emmet_mode='a' "enable all function in all mode.
 let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
+autocmd FileType html,css,blade EmmetInstall
 
 "UltiSnips
 let g:UltiSnipsExpandTrigger="<c-t>"
