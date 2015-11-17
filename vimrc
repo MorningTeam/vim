@@ -51,7 +51,7 @@ let g:tmux_navigator_save_on_switch = 1
 "emmet
 let g:user_emmet_mode='a' "enable all function in all mode.
 let g:user_emmet_install_global = 0
-autocmd FileType html,css,blade EmmetInstall
+autocmd FileType html,css,blade,htmldjango EmmetInstall
 
 "UltiSnips
 let g:UltiSnipsExpandTrigger="<c-t>"
