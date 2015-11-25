@@ -91,7 +91,8 @@ set wildignore+=*.pyc                            " Python byte code
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme='powerlineish'
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
 
 "在vim启动时默认开启NERDTree
 "autocmd VimEnter * NERDTree
@@ -110,7 +111,7 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YCM/third_party/ycmd/cpp/ycm/.y
 
 "Tagbar
 nmap <F8> :TagbarToggle<CR>
-let g:tagbar_type_go = {  
+let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
     \ 'kinds'     : [
         \ 'p:package',
