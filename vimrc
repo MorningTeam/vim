@@ -18,6 +18,10 @@ set smarttab
 " 1 tab == 4 spaces
 set shiftwidth=4
 set tabstop=4
+set softtabstop=4
+
+set backupdir=$HOME/.vim/backups
+set directory=$HOME/.vim/swaps
 
 syntax on
 
@@ -28,6 +32,9 @@ nmap <leader>l :set list!<CR>
 nmap <leader>h :Helptags<CR>
 nmap <leader>w :x<CR>
 nmap <leader>q :q!<CR>
+
+" Ctags
+nmap <leader>cj :tjump<CR>
 
 noremap <Leader>sc :ccl <bar> lcl<CR>
 noremap <Leader>se :Errors<CR>
@@ -44,7 +51,7 @@ let g:tmux_navigator_save_on_switch = 1
 "emmet
 let g:user_emmet_mode='a' "enable all function in all mode.
 let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
+autocmd FileType html,css,blade,htmldjango EmmetInstall
 
 "UltiSnips
 let g:UltiSnipsExpandTrigger="<c-t>"
@@ -97,8 +104,8 @@ let g:airline_solarized_bg='dark'
 "在vim启动时默认开启NERDTree
 "autocmd VimEnter * NERDTree
 "let NERDTreeWinPos="right"
-let NERDTreeIgnore = ['\.swp$', '.git$[[dir]]', '\.o$[[file]]', '.sublime-project[[file]]', '.sublime-workspace[[file]]']
-map <C-n> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.swp$', '.git$[[dir]]', '\.o$[[file]]', '.sublime-project[[file]]', '.sublime-workspace[[file]]', 'tags']
+map <leader>n :NERDTreeToggle<CR>
 nmap <leader>e :NERDTreeFind<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
@@ -147,6 +154,11 @@ filetype plugin indent on
 autocmd FileType c,cpp set cindent
 "autocmd FileType php noremap <C-B> :w!<CR>:!/usr/bin/php %<CR>
 "au
+
+if has("autocmd")
+    " remove trailing white spaces
+    autocmd BufWritePre * :%s/\s\+$//e
+endif
 
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
 "augroup reload_vimrc " {
