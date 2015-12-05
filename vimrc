@@ -51,7 +51,7 @@ let g:tmux_navigator_save_on_switch = 1
 "emmet
 let g:user_emmet_mode='a' "enable all function in all mode.
 let g:user_emmet_install_global = 0
-autocmd FileType html,css,blade,htmldjango EmmetInstall
+autocmd FileType html,css,blade,htmldjango,javascript EmmetInstall
 
 "UltiSnips
 let g:UltiSnipsExpandTrigger="<c-t>"
@@ -98,8 +98,8 @@ set wildignore+=*.pyc                            " Python byte code
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme='solarized'
-let g:airline_solarized_bg='dark'
+let g:airline_theme='bubblegum'
+"let g:airline_solarized_bg='dark'
 
 "在vim启动时默认开启NERDTree
 "autocmd VimEnter * NERDTree
@@ -159,6 +159,8 @@ if has("autocmd")
     " remove trailing white spaces
     autocmd BufWritePre * :%s/\s\+$//e
 endif
+
+map <c-f><c-n> :call JsBeautify()<cr>
 
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
 "augroup reload_vimrc " {
