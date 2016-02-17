@@ -97,7 +97,7 @@ set wildignore+=*.pyc                            " Python byte code
 "Ag
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
-let g:airline_powerline_fonts = 1
+"let g:airline_powerline_fonts = 1
 let g:airline_theme='bubblegum'
 "let g:airline_solarized_bg='dark'
 
