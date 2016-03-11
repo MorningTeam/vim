@@ -39,7 +39,7 @@ nmap <leader>cj :tjump<CR>
 noremap <Leader>sc :ccl <bar> lcl<CR>
 noremap <Leader>se :Errors<CR>
 
-" Smart way to move between windows
+" smart way to move between windows
 " map <C-j> <C-W>j
 " map <C-k> <C-W>k
 " map <C-h> <C-W>h
@@ -112,6 +112,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 "CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+map <leader>jd :CtrlPTag<cr><C-\>w
 
 "YCM
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YCM/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
