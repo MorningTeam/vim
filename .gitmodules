@@ -109,3 +109,6 @@
 [submodule "bundle/swift"]
 	path = bundle/swift
 	url = https://github.com/toyamarinyon/vim-swift
+[submodule "bundle/tagbar-phpctags"]
+	path = bundle/tagbar-phpctags
+	url = https://github.com/vim-php/tagbar-phpctags.vim
