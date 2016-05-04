@@ -1,5 +1,33 @@
-execute pathogen#infect()
+set nocompatible
+filetype off
 
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'spf13/vim-autoclose'
+Plugin 'scrooloose/syntastic'
+Plugin 'tmux-plugins/tpm'
+Plugin 'mattn/emmet-vim'
+Plugin 'arnaud-lb/vim-php-namespace'
+Plugin 'tpope/vim-obsession'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'vim-php/tagbar-phpctags.vim'
+Plugin 'shougo/neocomplete.vim'
+Plugin 'Shougo/neosnippet'
+Plugin 'Shougo/neosnippet-snippets'
+Plugin 'shawncplus/phpcomplete.vim'
+
+call vundle#end()
+
+filetype plugin on
+filetype plugin indent on
 set ts=4
 set nu
 set history=700
@@ -39,11 +67,53 @@ nmap <leader>cj :tjump<CR>
 noremap <Leader>sc :ccl <bar> lcl<CR>
 noremap <Leader>se :Errors<CR>
 
-" smart way to move between windows
-" map <C-j> <C-W>j
-" map <C-k> <C-W>k
-" map <C-h> <C-W>h
-" map <C-l> <C-W>l
+" Neocomplete
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_cache = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+" Close popup and save indent
+inoremap <slient> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+    return neocomplete#close_popup() . "\<CR>"
+endfunction
+" <TAB>: completion
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags"
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#force_omni_input_patterns')
+      let g:neocomplete#sources#omni#force_omni_input_patterns = {}
+endif
+let g:neocomplete#sources#omni#force_omni_input_patterns.php = '[^.\t]->\h\w*\|\h\w*::'
+" let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:]*\t]\%(\.\|->\)'
+
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+imap <c-n>     s_<Plug>(neosnippet_jump)
+
+" SuperTab like snippets behavior.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
 
 "tmux
 let g:tmux_navigator_save_on_switch = 1
@@ -53,19 +123,11 @@ let g:user_emmet_mode='a' "enable all function in all mode.
 let g:user_emmet_install_global = 0
 autocmd FileType html,css,blade,htmldjango,javascript EmmetInstall
 
-"UltiSnips
-let g:UltiSnipsExpandTrigger="<c-t>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-let g:snips_author="devin"
-
-" If you want :UltiSnipsEdit to split your window.
-" let g:UltiSnipsEditSplit="vertical"
-
 "PHP namespace
 inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
 noremap <Leader>u :call PhpInsertUse()<CR>
+autocmd FileType php inoremap <Leader>ns <Esc>:call PhpSortUse()<CR>
+autocmd FileType php noremap <Leader>ns :call PhpSortUse()<CR>
 
 "syntastic
 set statusline+=%#warningmsg#
@@ -114,9 +176,6 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 map <leader>jd :CtrlPTag<cr><C-\>w
 
-"YCM
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YCM/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-
 "Tagbar
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_type_go = {
@@ -147,11 +206,7 @@ let g:tagbar_type_go = {
     \ 'ctagsargs' : '-sort -silent'
 \ }
 
-"Fugitive
-
 filetype plugin on
-filetype plugin indent on
-"filet
 autocmd FileType c,cpp set cindent
 "autocmd FileType php noremap <C-B> :w!<CR>:!/usr/bin/php %<CR>
 "au
@@ -160,6 +215,9 @@ if has("autocmd")
     " remove trailing white spaces
     autocmd BufWritePre * :%s/\s\+$//e
 endif
+
+" netrwhist
+let g:netrw_dirhistmax = 0
 
 map <c-f><c-n> :call JsBeautify()<cr>
 
