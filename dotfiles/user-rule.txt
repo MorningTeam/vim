@@ -7,3 +7,11 @@ shift.infinite.red
 github.com
 fastly.net
 githubusercontent.com
+exponent.com
+egghead.io
+imgur.com
+godoc.org
+yannickloriot.com
+speakerdeck.com
+highscalability.com
+prismjs.com

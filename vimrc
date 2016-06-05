@@ -23,6 +23,9 @@ Plugin 'shougo/neocomplete.vim'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'ervandew/supertab'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'keith/swift.vim'
 
 call vundle#end()
 
@@ -226,3 +229,5 @@ autocmd BufWritePost $MYVIMRC source $MYVIMRC
 "    autocmd!
 "    autocmd BufWritePost $MYVIMRC source $MYVIMRC
 "augroup END " }
+
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
