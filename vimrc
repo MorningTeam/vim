@@ -37,6 +37,8 @@ Plugin 'thisivan/vim-taglist'
 Plugin 'racer-rust/vim-racer'
 Plugin 'rust-lang/rust.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 call vundle#end()
 
 filetype plugin on
@@ -46,7 +48,7 @@ set nu " 设置行号
 set encoding=utf8 "设置字符集"
 set mouse=a "鼠标"
 
-" rust 
+" rust
 "开启rust的自动reformat的功能
 let g:rustfmt_autosave = 1
 " 手动补全和定义跳转
@@ -76,7 +78,7 @@ set textwidth=79
 set showcmd            " 命令行显示输入的命令
 set showmode        " 命令行显示vim当前模式
 set incsearch        " 输入字符串就显示匹配点
-set hlsearch  
+set hlsearch
 "选项。只有在输入搜索模式并且打开 'ignorecase' 选项时才会使用。
 set ignorecase        " 搜索模式里忽略大小写
 set smartcase        " 如果搜索模式包含大写字符，不使用 'ignorecase'
