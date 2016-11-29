@@ -43,6 +43,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
+Plugin 'tibabit/vim-todo'
 call vundle#end()
 
 filetype plugin on
@@ -134,6 +135,10 @@ noremap <space> :
 "cnoremap <C-k> <t_ku>
 "cnoremap <C-a> <Home>
 "cnoremap <C-e> <End>
+
+inoremap <Tab-n> :bn "下一个buf
+inoremap <Tab-p> :bp "前一个buf
+
 "超级用户权限编辑
 cmap sw w !sudo tee >/dev/null %
 
@@ -195,6 +200,14 @@ set wildignore+=*.sw?                            " Vim swap files
 set wildignore+=*.luac                           " Lua byte code
 set wildignore+=*.pyc                            " Python byte code
 
+"<C-Tab> 向前循环切换到每个buffer上,并在但前窗口打开
+"<C-S-Tab> 向后循环切换到每个buffer上,并在但前窗口打开&nbsp;　　
+"注：MiniBufExplore默认是这两个快捷键，可是在ubuntu10.04中不能使用，原因可能是bash中已经定义了ctrl+tab快捷键所以我们可以更换此快捷键
+"在~/.vim/plugin/minibufexpl.vim中
+let g:miniBufExplMapCTabSwitchBufs = 1
+"是用<C-箭头键>切换到上下左右窗口中去: 
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapWindowNavVim = 1
 
 "Ag
 let g:ackprg = 'ag --nogroup --nocolor --column'
@@ -205,8 +218,8 @@ let g:airline_theme='bubblegum'
 
 "在vim启动时默认开启NERDTree
 "NERDTreeToggle
-autocmd VimEnter * NERDTree
-"let NERDTreeWinPos="right"
+"autocmd VimEnter * NERDTree
+"let NERDTreeWinPos="left"
 let NERDTreeIgnore = ['\.swp$', '.git$[[dir]]', '\.o$[[file]]', '.sublime-project[[file]]', '.sublime-workspace[[file]]', 'tags','.idea[[dir]]']
 map <leader>n :NERDTreeToggle<CR>
 nmap <leader>e :NERDTreeFind<CR>
@@ -227,6 +240,7 @@ let g:NERDTreeIndicatorMapCustom = {
 map <leader>tl :TlistToggle<CR>
 map <leader>to :TlistOpen<CR>
 map <leader>tc :TlistClose<CR>
+let Tlist_Use_Right_Window = 1
 
 "Tagbar
 nmap <F8> :TagbarToggle<CR>
@@ -272,3 +286,14 @@ let g:syntastic_check_on_wq = 0
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
+
+"自动补全
+set completeopt=longest,menu
+
+let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
+let g:ycm_error_symbol = '>>'
+let g:ycm_warning_symbol = '>*'
+nnoremap <leader>gdl :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gdf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gd :YcmCompleter GoToDefinitionElseDeclaration<CR>                                                                      
+nmap <F4> :YcmDiags<CR>
